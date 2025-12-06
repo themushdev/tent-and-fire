@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --term-green: #4af626;
+  --term-glow: #4af626;
+}
+
+body {
+  background-color: #050a05; /* Deepest black-green */
+  color: var(--term-green);
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* 1. THE LOGO GLOW (Only for the Title) */
+.title-glow {
+  text-shadow: 0 0 10px var(--term-glow), 0 0 20px var(--term-glow);
+}
+
+/* 2. THE BORDER GLOW (For Panels) */
+/* We will apply this to our main UI boxes in App.vue */
+.border-bloom {
+  box-shadow: 0 0 8px rgba(74, 246, 38, 0.3), inset 0 0 8px rgba(74, 246, 38, 0.1);
+  border: 1px solid var(--term-green);
+}
+
+/* 3. BUTTONS */
+.btn-retro {
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.btn-retro:hover:not(:disabled) {
+  background-color: rgba(74, 246, 38, 0.1);
+  box-shadow: 0 0 15px var(--term-green);
+  text-shadow: 0 0 5px var(--term-green);
+}
+.btn-retro:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #1a441a; }
+::-webkit-scrollbar-thumb:hover { background: #2d6b2d; }
